@@ -1,6 +1,6 @@
 language: c
 
-script: asdf plugin-test aws-vault https://github.com/virtualstaticvoid/asdf-aws-vault.git "aws-vault --version"
+script: asdf plugin-test aws-vault $TRAVIS_BUILD_DIR "aws-vault --version"
 
 before_script:
   - git clone --branch master --depth=1 https://github.com/asdf-vm/asdf.git asdf
