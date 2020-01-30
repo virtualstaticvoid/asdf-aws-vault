@@ -21,5 +21,6 @@ if [ -z "$(command -v jq)" ]; then
 fi
 
 # fetch all tag names
-versions=$(eval $cmd | jq -r '.[].tag_name' | sort --version-sort)
+# want just the version numbers, no "v" in front
+versions=$(eval $cmd | jq -r '.[].tag_name' | sed 's/^[v]//' | sort --version-sort)
 echo $versions
