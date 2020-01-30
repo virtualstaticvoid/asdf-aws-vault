@@ -8,7 +8,7 @@ before_script:
 
 os:
   - linux
-  - osx
+  # - osx
 
 addons:
   apt:
