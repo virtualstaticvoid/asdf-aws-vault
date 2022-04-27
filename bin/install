@@ -41,11 +41,29 @@ get_platform() {
   esac
 }
 
+get_arch() {
+  local arch=$(uname -m)
+  case $arch in
+    amd64 | x86_64)
+      echo "amd64"
+      ;;
+    arm64)
+      echo "arm64"
+      ;;
+    ppc64le)
+      echo "ppc64le"
+      ;;
+    *)
+      echo ""
+  esac
+}
+
 get_download_url() {
   local install_type=$1
   local version=$2
 
   local platform=$(get_platform)
+  local arch=$(get_arch)
 
   # HACK: asdf wants numeric version numbers, but most start with a "v"
   # since people usually tag releases in GitHub with a vX.X.X and _not_ X.X.X
@@ -55,7 +73,7 @@ get_download_url() {
     version="v${version}"
   fi
 
-  echo "https://github.com/99designs/aws-vault/releases/download/${version}/aws-vault-${platform}-amd64"
+  echo "https://github.com/99designs/aws-vault/releases/download/${version}/aws-vault-${platform}-${arch}"
 }
 
 install_plugin "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
