@@ -25,7 +25,20 @@ install_plugin() {
 }
 
 get_platform() {
-  [ "Linux" = "$(uname)" ] && echo "linux" || echo "darwin"
+  local plat=$(uname -s)
+  case $plat in
+    Linux)
+      echo "linux"
+      ;;
+    FreeBSD)
+      echo "freebsd"
+      ;;
+    Darwin)
+      echo "darwin"
+      ;;
+    *)
+      echo ""
+  esac
 }
 
 get_download_url() {
