@@ -8,6 +8,7 @@
 
 ```
 asdf plugin-add aws-vault https://github.com/virtualstaticvoid/asdf-aws-vault.git
+asdf install aws-vault latest
 ```
 
 ## Use
