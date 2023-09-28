@@ -1,6 +1,6 @@
 # asdf-aws-vault
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/virtualstaticvoid/asdf-aws-vault/Main%20Workflow?style=flat-square)](https://github.com/virtualstaticvoid/asdf-aws-vault/actions)
+[![Main Workflow](https://github.com/virtualstaticvoid/asdf-aws-vault/actions/workflows/workflow.yml/badge.svg)](https://github.com/virtualstaticvoid/asdf-aws-vault/actions/workflows/workflow.yml)
 
 [`aws-vault`][util] plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
